@@ -1,12 +1,36 @@
 package com.techreturners.cats;
 
-interface Cat {
-    boolean sleep = false;
+public abstract class Cat implements Behaviours {
 
-    public void isAsleep();
-    public void goToSleep();
-    public void wakeUp();
-    public void getSetting();
-    public void getAverageHeight();
-    public void eat();
+    protected boolean sleep = false;
+    protected int averageHeight;
+    protected String setting;
+
+    public Cat(int averageHeight, String setting) {
+        this.averageHeight = averageHeight;
+        this.setting = setting;
+    }
+
+    public boolean isAsleep() {
+        return sleep;
+    }
+    public void goToSleep() {
+        sleep = true;
+    }
+    public void wakeUp() {
+        sleep = false;
+    }
+
+    public String getSetting() {
+        return setting;
+    }
+
+    public int getAverageHeight() {
+        return averageHeight;
+    }
+
+    public String eat() {
+        return "Mmm, food!";
+    }
+
 }
